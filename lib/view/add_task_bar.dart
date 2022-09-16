@@ -84,7 +84,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   ),
                   Expanded(
                     child: MyInputField(
-                      title: 'Start Date',
+                      title: 'End Date',
                       hint: _endTime,
                       widget: IconButton(
                         icon: const Icon(
@@ -187,6 +187,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
   _validateDate() {
     if (_titleController.text.isNotEmpty && _noteController.text.isNotEmpty) {
       //add to database
+      print('実行');
       _addTaskToDb();
       Get.back();
     } else if (_titleController.text.isEmpty || _noteController.text.isEmpty) {
@@ -220,6 +221,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
             return GestureDetector(
               onTap: () {
                 setState(() {
+                  print('sucseed');
                   _selectedColor = index;
                 });
               },
